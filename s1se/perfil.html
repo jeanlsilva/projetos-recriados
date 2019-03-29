@@ -1,0 +1,238 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>S1SE - Cadastro de usuários</title>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/cadastro-startups/style.css">
+	<link href="assets/css/bootstrap-tagsinput.css" rel="stylesheet" type="text/css"/>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+</head>
+<body>
+	<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="logo">
+							<a href="#">
+								<img src="assets/images/logo.png" class="logo-s1se-01" />
+							</a>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="menu">
+							<nav class="navbar navbar-expand-lg navbar-light">
+								<img src="assets/images/notif.svg" class="icone-notif" width="34.7" height="35.8" data-toggle="dropdown"/>
+								<!--if notificacoes <=0 -> display:none -->
+								<div class="num-notif">10</div>
+								<div class="dropdown-menu notif">
+									você tem 10 notificações
+								</div>
+							<div class="dropdown">
+								<button class="navbar-toggler bg-light" data-toggle="collapse" data-target="#navbarMenu">
+									<span class="navbar-toggler-icon"></span>
+								</button>
+							</div>
+							<div class="menu navbar-collapse collapse" id="navbarMenu">	
+								<ul>
+									<li>
+										<a href="#">Quem Somos</a>
+									</li>
+									<li>
+										<a href="#">Planos</a>
+									</li>
+									<li>
+										<a href="#">Contato</a>
+									</li>		
+									<!-- if usuario=logado->display:none -->							
+									<div class="deslogado">
+										<li class="btn_cadastro">
+											<a class="Cadastre-se" href="cadastro-usuarios.html">Cadastre-se</a>
+										</li>
+										<li class="btn_entrar" data-toggle="modal" data-target="#janela">
+											<a class="Entrar" href="#">Entrar</a>			
+										</li>
+									</div>
+									<!-- if usuario=logado->display:block -->
+									<li class="logado">									
+									<div class="nav-perfil dropdown-toggle" data-toggle="dropdown">										
+										<div class="img-perfil"></div>Nome do Usuário	
+										<div class="dropdown-menu">
+											<ul>
+												<li><a href="../">Home</a></li>
+												<li><a href="../perfil.html">Meu Perfil</a></li>
+												<li><a href="../chat.html">Chat</a></li>
+												<li><a href="../alterar-senha.html">Alterar Senha</a></li>
+												<li><a href="#">Sair</a></li>
+											</ul>
+										</div>										
+									</div>	
+									</li>								
+								</ul>							
+							</div>
+						</nav>
+						</div>
+					</div>
+					<div class="col-sm-4 dropdown">						
+						<!--if usuario=logado->display:none-->
+						<div class="deslogado"> 
+							<div class="btn_cadastro">
+							<a class="Cadastre-se" href="cadastro-usuarios.html">Cadastre-se</a>
+							</div>
+							<div class="btn_entrar" data-toggle="modal" data-target="#janela">
+								<a class="Entrar" href="#">Entrar</a>
+							</div>	
+						</div>
+						<!--if usuario=logado->display:flex-->
+						<div class="logado">
+							<img src="assets/images/notif.svg" class="icone-notif" width="34.7" height="35.8" data-toggle="dropdown"/>
+							<!--if notificacoes <=0 -> display:none -->
+							<div class="num-notif">10</div>
+							<div class="dropdown-menu notif">
+								você tem 10 notificações
+							</div>
+							<div class="nav-perfil">
+								<div class="user-options dropdown-toggle" data-toggle="dropdown">
+									<div class="img-perfil"></div>Nome do Usuário	
+									<div class="dropdown-menu">
+										<ul>
+											<li><a href="../">Home</a></li>
+											<li><a href="../perfil.html">Meu Perfil</a></li>
+											<li><a href="../chat.html">Chat</a></li>
+											<li><a href="../alterar-senha.html">Alterar Senha</a></li>
+											<li><a href="#">Sair</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+	<div class="maincontent">
+		<div class="container">
+			<h1>Bem-vindo(a), <strong>Usuário</strong></h1>
+				<div class="bottom-navbar">
+					<ul class="nav">
+					  <li class="nav-item">					  	
+					    <a class="nav-link active" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.822 18.096c-3.439-.794-6.64-1.49-5.09-4.418 4.72-8.912 1.251-13.678-3.732-13.678-5.082 0-8.464 4.949-3.732 13.678 1.597 2.945-1.725 3.641-5.09 4.418-3.073.71-3.188 2.236-3.178 4.904l.004 1h23.99l.004-.969c.012-2.688-.092-4.222-3.176-4.935z"/></svg>Meu Perfil</a>
+					  </li>
+					  <li class="nav-item">					  	
+					    <a class="nav-link" href="cadastro-startups.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.566 17.842c-.945 2.462-3.678 4.012-6.563 4.161.139-2.772 1.684-5.608 4.209-6.563l.51.521c-1.534 1.523-2.061 2.765-2.144 3.461.704-.085 2.006-.608 3.483-2.096l.505.516zm-1.136-11.342c-1.778-.01-4.062.911-5.766 2.614-.65.649-1.222 1.408-1.664 2.258 1.538-1.163 3.228-1.485 5.147-.408.566-1.494 1.32-3.014 2.283-4.464zm5.204 17.5c.852-.44 1.61-1.013 2.261-1.664 1.708-1.706 2.622-4.001 2.604-5.782-1.575 1.03-3.125 1.772-4.466 2.296 1.077 1.92.764 3.614-.399 5.15zm11.312-23.956c-.428-.03-.848-.044-1.261-.044-9.338 0-14.465 7.426-16.101 13.009l4.428 4.428c5.78-1.855 12.988-6.777 12.988-15.993v-.059c-.002-.437-.019-.884-.054-1.341zm-5.946 7.956c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"/></svg>Startups</a>
+					  </li>
+					  <li class="nav-item">					  	
+					    <a class="nav-link disabled" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 9.352c0-4.852-4.751-8.352-10-8.352-5.281 0-10 3.526-10 8.352 0 1.711.615 3.391 1.705 4.695.047 1.527-.851 3.718-1.661 5.312 2.168-.391 5.252-1.258 6.649-2.115 7.697 1.877 13.307-2.842 13.307-7.892zm-14.5 1.38c-.689 0-1.25-.56-1.25-1.25s.561-1.25 1.25-1.25 1.25.56 1.25 1.25-.561 1.25-1.25 1.25zm4.5 0c-.689 0-1.25-.56-1.25-1.25s.561-1.25 1.25-1.25 1.25.56 1.25 1.25-.561 1.25-1.25 1.25zm4.5 0c-.689 0-1.25-.56-1.25-1.25s.561-1.25 1.25-1.25 1.25.56 1.25 1.25-.561 1.25-1.25 1.25zm8.383 8.789c-.029 1.001.558 2.435 1.088 3.479-1.419-.258-3.438-.824-4.352-1.385-3.365.818-6.114-.29-7.573-2.1 4.557-.66 8.241-3.557 9.489-7.342 1.48.979 2.465 2.491 2.465 4.274 0 1.12-.403 2.221-1.117 3.074z"/></svg>Chats</a>
+					  </li>
+					  <li class="nav-item">					  	
+					    <a class="nav-link disabled" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18 10v-4c0-3.313-2.687-6-6-6s-6 2.687-6 6v4h-3v14h18v-14h-3zm-5 7.723v2.277h-2v-2.277c-.595-.347-1-.984-1-1.723 0-1.104.896-2 2-2s2 .896 2 2c0 .738-.404 1.376-1 1.723zm-5-7.723v-4c0-2.206 1.794-4 4-4 2.205 0 4 1.794 4 4v4h-8z"/></svg>Alterar Senha</a>
+					  </li>
+					</ul>
+				</div>
+				<div class="logo-startup" style="display:block;">
+					<div class="logo-field">
+						LOGO
+					</div>
+					<div class="add-img" data-toggle="modal" data-target="#opt-upload">
+						+
+					</div>
+					<div class="modal fade" id="opt-upload">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<a href="#" data-dismiss="modal">Cancelar</a>
+								</div>
+								<div class="modal-body">
+									<label for="file-upload" class="custom-file-upload">Tirar uma foto</label>
+									<input id="file-upload" type="file" name="img" accept="image/jpg, image/png" />
+								</div>
+								<div class="modal-footer">
+									<a href="#">Procurar na galeria</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<form action="" method="post" id="form-data">	
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-6">
+							<label for="name">Nome Completo</label>
+							<input type="text" name="name" id="name" class="form-control" placeholder="teste">
+						</div>
+						<div class="col-sm-6">
+							<label for="email">E-mail</label>
+							<input type="text" name="email" id="email" class="form-control">
+						</div>
+					</div>
+				</div>				
+				<div class="form-group">
+					<label for="categorias">Competências</label>
+					<input type="text" data-role="tagsinput" value="Marketing, Design, Social Media" class="form-control">						
+				</div>
+				<div class="form-group">
+					<label for="cargo">Cargo</label>
+					<input type="text" name="cargo" id="cargo" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="site">Site</label>
+					<input type="text" name="site" id="site" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="linkedin">Linkedin</label>
+					<input type="text" name="linkedin" id="linkedin" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="instagram">Instagram</label>
+					<input type="text" name="instagram" id="instagram" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="facebook">Facebook</label>
+					<input type="text" name="facebook" id="facebook" class="form-control">
+				</div>			
+				<div class="form-group">
+					<label for="twitter">Twitter</label>
+					<input type="text" name="twitter" id="twitter" class="form-control">
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-4">
+							<label for="pais">País</label>
+							<select name="pais" id="pais" class="form-control">
+							</select>
+						</div>
+						<div class="col-sm-4">
+							<label for="estado">Estado</label>
+							<select name="estado" id="estado" class="form-control">
+							</select>
+						</div>
+						<div class="col-sm-4">
+							<label for="cidade">Cidade</label>
+							<select name="cidade" id="cidade" class="form-control">
+							</select>
+						</div>	
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="resumo">Resumo</label>
+					<textarea name="resumo" id="resumo" class="form-control" rows="4"></textarea>
+				</div>
+				<div class="form-group">
+					<div class="btn-confirmar startup">
+						<a href="#" id="next-2">Salvar alterações</a>
+					</div>
+				</div>
+		    </form>
+	    </div>
+	</div>
+	<script src="assets/js/jquery.min.js"></script>				
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous">
+	</script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/script.js"></script>
+	<script src="assets/js/bootstrap-tagsinput.js"></script>		
+</body>
+</html>

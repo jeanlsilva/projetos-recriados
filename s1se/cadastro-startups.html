@@ -1,0 +1,538 @@
+<html>
+	<head>
+		<title>S1SE - Startup, Investors, Suppliers, Employees</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />		
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/cadastro-startups/style.css" />
+		<link href="assets/css/bootstrap-tagsinput.css" rel="stylesheet" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="logo">
+							<a href="./">
+								<img src="assets/images/logo.png" class="logo-s1se-01" />
+							</a>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="menu">
+							<nav class="navbar navbar-expand-lg navbar-light">
+								<img src="assets/images/notif.svg" class="icone-notif" width="34.7" height="35.8" data-toggle="dropdown"/>
+								<!--if notificacoes <=0 -> display:none -->
+								<div class="num-notif">10</div>
+								<div class="dropdown-menu notif">
+									você tem 10 notificações
+								</div>
+							<div class="dropdown">
+								<button class="navbar-toggler bg-light" data-toggle="collapse" data-target="#navbarMenu">
+									<span class="navbar-toggler-icon"></span>
+								</button>
+							</div>
+							<div class="menu navbar-collapse collapse" id="navbarMenu">	
+								<ul>
+									<li>
+										<a href="#">Quem Somos</a>
+									</li>
+									<li>
+										<a href="#">Planos</a>
+									</li>
+									<li>
+										<a href="#">Contato</a>
+									</li>		
+									<!-- if usuario=logado->display:none -->							
+									<div class="deslogado">
+										<li class="btn_cadastro">
+											<a class="Cadastre-se" href="cadastro-usuarios.html">Cadastre-se</a>
+										</li>
+										<li class="btn_entrar" data-toggle="modal" data-target="#janela">
+											<a class="Entrar" href="#">Entrar</a>			
+										</li>
+									</div>
+									<!-- if usuario=logado->display:block -->
+									<li class="logado">									
+									<div class="nav-perfil dropdown-toggle" data-toggle="dropdown">										
+										<div class="img-perfil"></div>Nome do Usuário	
+										<div class="dropdown-menu">
+											<ul>
+												<li><a href="../">Home</a></li>
+												<li><a href="../perfil.html">Meu Perfil</a></li>
+												<li><a href="../chat.html">Chat</a></li>
+												<li><a href="../alterar-senha.html">Alterar Senha</a></li>
+												<li><a href="#">Sair</a></li>
+											</ul>
+										</div>										
+									</div>	
+									</li>								
+								</ul>							
+							</div>
+						</nav>
+						</div>
+					</div>
+					<div class="col-sm-4 dropdown">						
+						<!--if usuario=logado->display:none-->
+						<div class="deslogado"> 
+							<div class="btn_cadastro">
+							<a class="Cadastre-se" href="cadastro-usuarios.html">Cadastre-se</a>
+							</div>
+							<div class="btn_entrar" data-toggle="modal" data-target="#janela">
+								<a class="Entrar" href="#">Entrar</a>
+							</div>	
+						</div>
+						<!--if usuario=logado->display:flex-->
+						<div class="logado">
+							<img src="assets/images/notif.svg" class="icone-notif" width="34.7" height="35.8" data-toggle="dropdown"/>
+							<!--if notificacoes <=0 -> display:none -->
+							<div class="num-notif">10</div>
+							<div class="dropdown-menu notif">
+								você tem 10 notificações
+							</div>
+							<div class="nav-perfil">
+								<div class="user-options dropdown-toggle" data-toggle="dropdown">
+									<div class="img-perfil"></div>Nome do Usuário	
+									<div class="dropdown-menu">
+										<ul>
+											<li><a href="../">Home</a></li>
+											<li><a href="../perfil.html">Meu Perfil</a></li>
+											<li><a href="../chat.html">Chat</a></li>
+											<li><a href="../alterar-senha.html">Alterar Senha</a></li>
+											<li><a href="#">Sair</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="maincontent">
+			<div class="container">				
+				<h1>Bem-vindo(a), <strong>Usuário</strong></h1>
+				<div class="bottom-navbar">
+					<ul class="nav">
+					  <li class="nav-item">					  	
+					    <a class="nav-link" href="perfil.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.822 18.096c-3.439-.794-6.64-1.49-5.09-4.418 4.72-8.912 1.251-13.678-3.732-13.678-5.082 0-8.464 4.949-3.732 13.678 1.597 2.945-1.725 3.641-5.09 4.418-3.073.71-3.188 2.236-3.178 4.904l.004 1h23.99l.004-.969c.012-2.688-.092-4.222-3.176-4.935z"/></svg>Meu Perfil</a>
+					  </li>
+					  <li class="nav-item">					  	
+					    <a class="nav-link active" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.566 17.842c-.945 2.462-3.678 4.012-6.563 4.161.139-2.772 1.684-5.608 4.209-6.563l.51.521c-1.534 1.523-2.061 2.765-2.144 3.461.704-.085 2.006-.608 3.483-2.096l.505.516zm-1.136-11.342c-1.778-.01-4.062.911-5.766 2.614-.65.649-1.222 1.408-1.664 2.258 1.538-1.163 3.228-1.485 5.147-.408.566-1.494 1.32-3.014 2.283-4.464zm5.204 17.5c.852-.44 1.61-1.013 2.261-1.664 1.708-1.706 2.622-4.001 2.604-5.782-1.575 1.03-3.125 1.772-4.466 2.296 1.077 1.92.764 3.614-.399 5.15zm11.312-23.956c-.428-.03-.848-.044-1.261-.044-9.338 0-14.465 7.426-16.101 13.009l4.428 4.428c5.78-1.855 12.988-6.777 12.988-15.993v-.059c-.002-.437-.019-.884-.054-1.341zm-5.946 7.956c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"/></svg>Startups</a>
+					  </li>
+					  <li class="nav-item">					  	
+					    <a class="nav-link disabled" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 9.352c0-4.852-4.751-8.352-10-8.352-5.281 0-10 3.526-10 8.352 0 1.711.615 3.391 1.705 4.695.047 1.527-.851 3.718-1.661 5.312 2.168-.391 5.252-1.258 6.649-2.115 7.697 1.877 13.307-2.842 13.307-7.892zm-14.5 1.38c-.689 0-1.25-.56-1.25-1.25s.561-1.25 1.25-1.25 1.25.56 1.25 1.25-.561 1.25-1.25 1.25zm4.5 0c-.689 0-1.25-.56-1.25-1.25s.561-1.25 1.25-1.25 1.25.56 1.25 1.25-.561 1.25-1.25 1.25zm4.5 0c-.689 0-1.25-.56-1.25-1.25s.561-1.25 1.25-1.25 1.25.56 1.25 1.25-.561 1.25-1.25 1.25zm8.383 8.789c-.029 1.001.558 2.435 1.088 3.479-1.419-.258-3.438-.824-4.352-1.385-3.365.818-6.114-.29-7.573-2.1 4.557-.66 8.241-3.557 9.489-7.342 1.48.979 2.465 2.491 2.465 4.274 0 1.12-.403 2.221-1.117 3.074z"/></svg>Chats</a>
+					  </li>
+					  <li class="nav-item">					  	
+					    <a class="nav-link disabled" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18 10v-4c0-3.313-2.687-6-6-6s-6 2.687-6 6v4h-3v14h18v-14h-3zm-5 7.723v2.277h-2v-2.277c-.595-.347-1-.984-1-1.723 0-1.104.896-2 2-2s2 .896 2 2c0 .738-.404 1.376-1 1.723zm-5-7.723v-4c0-2.206 1.794-4 4-4 2.205 0 4 1.794 4 4v4h-8z"/></svg>Alterar Senha</a>
+					  </li>
+					</ul>
+				</div>
+				<div class="logo-startup">
+					<div class="logo-field">
+						LOGO
+					</div>
+					<div class="add-img" data-toggle="modal" data-target="#opt-upload">
+						+
+					</div>
+					<div class="modal fade" id="opt-upload">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<a href="#" data-dismiss="modal">Cancelar</a>
+								</div>
+								<div class="modal-body">
+									<a href="#">Tirar uma foto</a>
+								</div>
+								<div class="modal-footer">
+									<label for="file-upload" class="custom-file-upload">Procurar na galeria</label>
+									<input id="file-upload" type="file" name="img" accept="image/jpg, image/png" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<form action="" method="post" id="form-data">				
+					<div id="first">													
+						<h1>Você ainda não tem nenhuma startup cadastrada!</h1>
+						<div class="grid-startups">
+							<div class="row">
+								<!--grid com startups cadastradas-->
+								<div class="item">
+									<div class="row">
+										<div class="col left">
+											<div class="logo-img"></div>
+											<h4>Empresa X</h4>
+											Cidade<br>
+											<a href="#">Tornar visível</a>
+										</div>
+										<div class="col right">
+											<a href="#">Ver/Editar Perfil</a><br>
+											<a href="#">Adicionar Equipe</a><br>
+											<a href="#">Adicionar Vagas</a><br>
+											<a href="#">Adicionar Pitch</a><br>
+											<a href="#">Adicionar Detalhes</a><br>
+											<a href="#">Adicionar Redes Sociais</a><br>
+											<a href="#">Excluir Perfil</a>
+										</div>
+									</div>
+								</div>								
+								<div class="item"><a href="#" id="next-1"><svg xmlns="http://www.w3.org/2000/svg" width="45.9" height="45.9" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm7 14h-5v5h-4v-5h-5v-4h5v-5h4v5h5v4z"/></svg></a></div>
+							</div><br>							
+						</div>
+					</div>					
+					<div id="second">								
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-6">
+									<label for="name">Nome da Startup</label>
+									<input type="text" name="name" id="name" class="form-control">
+								</div>
+								<div class="col-sm-6">
+									<label for="email">E-mail para contato</label>
+									<input type="text" name="email" id="email" class="form-control">
+								</div>
+							</div>
+						</div>	
+						<div class="form-group">
+							<label for="resumo">Resumo</label>
+							<textarea name="resumo" id="resumo" rows="4" class="form-control" placeholder="Máx. 200 caracteres"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="desc">Descrição</label>
+							<textarea name="desc" id="desc" rows="5" class="form-control" placeholder="Máx. 1.000 caracteres"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="categorias">Categorias</label>
+							<input type="text" data-role="tagsinput" value="Educação, Inovação, EdTech" class="form-control">						
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-6">
+									<label for="site">Site</label>
+									<input type="text" name="site" id="site" class="form-control">
+								</div>
+								<div class="col-sm-6">
+									<label for="video">Vídeo de apresentação</label>
+									<input type="text" name="video" id="video" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-4">
+									<label for="numero">Número</label>
+									<input type="text" name="numero" id="numero" class="form=control">
+								</div>
+								<div class="col-sm-4">
+									<label for="complemento">Complemento</label>
+									<input type="text" name="complemento" id="complemento" class="form-control">
+								</div>
+								<div class="col-sm-4">
+									<label for="bairro">Bairro</label>
+									<input type="text" name="bairro" id="bairro" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-4">
+									<label for="pais">País</label>
+									<select name="pais" id="pais" class="form-control">
+									</select>
+								</div>
+								<div class="col-sm-4">
+									<label for="estado">Estado</label>
+									<select name="estado" id="estado" class="form-control">
+									</select>
+								</div>
+								<div class="col-sm-4">
+									<label for="cidade">Cidade</label>
+									<select name="cidade" id="cidade" class="form-control">
+									</select>
+								</div>	
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="btn-confirmar startup">
+								<a href="#" id="next-2">Salvar alterações</a>
+							</div>
+						</div>
+					</div>
+					<div id="third">
+						<div class="form-group">
+							<h5>Estágio da Startup</h5>							
+							<input type="radio" name="estagio" id="hipotese" value="hipotese">
+							<label for="hipotese">Hipótese (ideia ou conceito)</label><br>
+							<input type="radio" name="estagio" id="validacao" value="validacao">
+							<label for="validacao">Validação (desenvolvendo o produto)</label><br>							
+							<input type="radio" name="estagio" id="negocio" value="negocio">
+							<label for="negocio">Negócio (produto validado e captando clientes)</label><br>							
+							<input type="radio" name="estagio"id="escala" value="escala">
+							<label for="escala">Escala (acelerando crescimento)</label><br>
+						</div>
+						<div class="form-group">
+							<h5>Tipo de negócio</h5>							
+							<input type="radio" name="tipo" id="b2b" value="b2b">
+							<label for="b2b">B2B (Business to Business)</label><br>
+							<input type="radio" name="tipo" id="b2c" value="b2c">
+							<label for="b2c">B2C (Business to Customer)</label><br>
+							<input type="radio" name="tipo" id="b2b2c" value="b2b2c">
+							<label for="b2b2c">B2B2C (Business to Business to Customer)</label><br>							
+							<input type="radio" name="tipo" id="b2g" value="b2g">
+							<label for="b2g">B2G (Business to Government)</label><br>
+							<input type="radio" name="tipo" id="b2e" value="b2e">
+							<label for="b2e">B2E (Business to Employee)</label><br>	
+							<input type="radio" name="tipo" id="c2c" value="c2c">
+							<label for="c2c">C2C (Customer to Customer)</label><br>
+							<input type="radio" name="tipo" id="e2e" value="e2e">
+							<label for="e2e">E2E (Employee to Employee)</label><br>
+						</div>
+						<div class="form-group">
+							<h5>Modelo de negócio</h5>							
+							<input type="radio" name="modelo" id="assinatura" value="assinatura">
+							<label for="assinatura">Assinatura</label><br>	
+							<input type="radio" name="modelo" id="e-commerce" value="e-commerce">
+							<label for="e-commerce">E-Commerce</label><br>				
+							<input type="radio" name="modelo" id="hardware" value="hardware">
+							<label for="hardware">Hardware</label><br>
+							<input type="radio" name="modelo" id="marketplace" value="marketplace">
+							<label for="marketplace">Marketplace</label><br>
+							<input type="radio" name="modelo" id="mobile-app" value="mobile-app">
+							<label for="mobile-app">Mobile App</label><br>			
+							<input type="radio" name="modelo" id="redes-sociais" value="redes-sociais">
+							<label for="redes-sociais">Redes Sociais</label><br>
+							<input type="radio" name="modelo" id="saas" value="saas">
+							<label for="saas">SaaS</label><br>
+							<input type="radio" name="modelo" id="servico-consultoria" value="servico-consultoria">
+							<label for="servico-consultoria">Serviço/Consultoria</label><br>
+							<input type="radio" name="modelo" id="software" value="software">
+							<label for="software">Software</label><br>
+						</div>
+						<div class="form-group">
+							<div class="btn-confirmar startup">
+								<a href="#" id="next-3">Salvar alterações</a>
+							</div>
+						</div>
+					</div>
+					<div id="fourth">
+						<div class="form-group">
+							<label for="frase">Frase inicial de impacto</label>
+							<textarea name="frase" id="frase" class="form-control" rows="3"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="problema">Qual problema sua startup resolve?</label>
+							<textarea name="problema" id="problema" class="form-control" rows="3"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="produto">Qual produto da sua startup vai resolver esse problema?</label>
+							<textarea name="produto" id="produto" class="form-control" rows="3"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="modelo">Qual o seu modelo de negócios?</label>
+							<textarea name="modelo" id="modelo" class="form-control" rows="3"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="diferencial">Qual o diferencial da sua startup?</label>
+							<textarea name="diferencial" id="diferencial" class="form-control" rows="3"></textarea>
+						</div>					
+						<div class="form-group">
+							<label for="fase">Em que fase está sua startup?</label>
+							<textarea name="fase" id="fase" class="form-control" rows="3"></textarea>
+						</div>	
+						<div class="form-group">
+							<label for="pitch">Pitch em vídeo</label>
+							<input type="text" name="pitch" id="pitch" class="form-control">
+						</div>
+						<div class="form-group">
+							<h5>Visível para:</h5>
+							<input type="radio" name="visibilidade1" id="todos1" value="todos1">
+							<label for="todos1">Todos</label><br>
+							<input type="radio" name="visibilidade1" id="empreendedores1" value="empreendedores1">
+							<label for="empreendedores1">Empreendedores</label><br>
+							<input type="radio" name="visibilidade1" id="investidores1" value="investidores1">
+							<label for="investidores1">Investidores</label><br>
+							<input type="radio" name="visibilidade1" id="fornecedores1" value="fornecedores1">
+							<label for="fornecedores1">Fornecedores</label><br>
+							<input type="radio" name="visibilidade1" id="n-visivel1" value="n-visivel1">
+							<label for="n-visivel1">Não deixar visível</label><br>
+						</div>
+						<div class="form-group">
+							<label for="modelo-investimento1">Modelo de investimento que busca:</label>
+							<textarea name="modelo-investimento1" id="modelo-investimento1" class="form-control" rows="3"></textarea>
+						</div>
+						<div class="form-group">
+							<h5>Visível para:</h5>
+							<input type="radio" name="visibilidade2" id="todos2" value="todos2">
+							<label for="todos2">Todos</label><br>
+							<input type="radio" name="visibilidade2" id="empreendedores2" value="empreendedores2">
+							<label for="empreendedores2">Empreendedores</label><br>
+							<input type="radio" name="visibilidade2" id="investidores2" value="investidores2">
+							<label for="investidores2">Investidores</label><br>
+							<input type="radio" name="visibilidade2" id="fornecedores2" value="fornecedores2">
+							<label for="fornecedores2">Fornecedores</label><br>
+							<input type="radio" name="visibilidade2" id="n-visivel2" value="n-visivel2">
+							<label for="n-visivel2">Não deixar visível</label><br>
+						</div>
+						<div class="form-group">
+							<div class="btn-confirmar startup">
+								<a href="#" id="next-4">Salvar alterações</a>
+							</div>
+						</div>
+					</div>
+					<div id="fifth">
+						<div class="form-group">
+							<label for="linkedin">Linkedin</label>
+							<input id="linkedin" type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="instagram">Instagram</label>
+							<input id="instagram" type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="facebook">Facebook</label>
+							<input id="facebook" type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="twitter">Twitter</label>
+							<input id="twitter" type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="snapchat">Snapchat</label>
+							<input id="snapchat" type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="pinterest">Pinterest</label>
+							<input id="pinterest" type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="tumblr">Tumblr</label>
+							<input id="tumblr" type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="flickr">Flickr</label>
+							<input id="flickr" type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="google">Google</label>
+							<input id="google" type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="youtube">Youtube</label>
+							<input id="youtube" type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<div class="btn-confirmar startup">
+								<a href="#" id="next-5">Salvar alterações</a>
+							</div>
+						</div>
+					</div>
+					<div id="sixth">
+						<h5>Adicione pessoas da equipe na startup</h5>
+						<p>As pessoas/parceiros adicionados receberão um e-mail para confirmar inclusão</p>
+						<div class="form-group">
+							<input id="membros" type="text" class="typeahead form-control">
+						</div>
+						<div class="lista-membros">
+							<ul>
+								<!--lista de membros ativos-->
+								<li class="item" id="membro">
+									<div class="img-membro"><img src=""></div>
+									<div class="info-membro ativo">
+										Membro X<br>
+										<strong>Ativo</strong>
+									</div>
+								</li><br>
+								<!--usuario pesquisado-->
+								<li class="item pesquisado">
+									<div class="img-membro"><img src=""></div>
+									<div class="info-membro">
+										Membro Y<br>
+										<strong>Ativo</strong>
+									</div>
+									<a href="#">Remover</a>
+									<a href="#">Adicionar</a>
+								</li>
+							</ul>
+						</div>
+						<div class="form-group">
+							<div class="btn-confirmar startup">
+								<a href="#" id="next-6">Salvar alterações</a>
+							</div>
+						</div>
+					</div>
+					<div id="seventh">
+						<h1>Adicione vagas para procurar profissionais qualificados para o que você precisa</h1>
+						<div class="grid-startups">
+							<div class="row">				
+								<div class="item">
+									Vaga X 
+									<a href="#">Excluir Vaga</a>
+									<a href="#">Editar Vaga |</a>
+								</div>				
+								<div class="item add"><a href="#" id="next-7"><svg xmlns="http://www.w3.org/2000/svg" width="45.9" height="45.9" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm7 14h-5v5h-4v-5h-5v-4h5v									-5h4v5h5v4z"/></svg></a></div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="btn-confirmar startup">
+								<a href="#">Salvar alterações</a>
+							</div>
+						</div>
+					</div>
+					<div id="eighth">
+						<div class="form-group">
+							<label for="cargo">Cargo</label>
+							<input type="text" name="cargo" id="cargo" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="desc">Descrição</label>
+							<textarea name="desc" id="desc" class="form-control" rows="3"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="categorias">Categorias</label>
+							<input type="text" data-role="tagsinput" value="Html, Javascript, Phyton" class="form-control">						
+						</div>
+						<div class="form-group">
+							<label for="salario">Salário</label>
+							<input type="text" name="salario" id="salario" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="modelo">Modelo de Contratação</label>
+							<input type="text" name="modelo" id="modelo" class="form-control">
+						</div>						
+						<div class="form-group">
+							<h5>Visível para:</h5>
+							<input type="radio" name="visibilidade1" id="todos1" value="todos1">
+							<label for="todos1">Todos</label><br>
+							<input type="radio" name="visibilidade1" id="empreendedores1" value="empreendedores1">
+							<label for="empreendedores1">Empreendedores</label><br>
+							<input type="radio" name="visibilidade1" id="investidores1" value="investidores1">
+							<label for="investidores1">Investidores</label><br>
+							<input type="radio" name="visibilidade1" id="fornecedores1" value="fornecedores1">
+							<label for="fornecedores1">Fornecedores</label><br>
+							<input type="radio" name="visibilidade1" id="n-visivel1" value="n-visivel1">
+							<label for="n-visivel1">Não deixar visível</label><br>
+						</div>						
+						<div class="form-group">
+							<div class="btn-confirmar startup">
+								<a href="#" id="next-8">Salvar alterações</a>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>			
+		</div>
+		<script src="assets/js/jquery.min.js"></script>				
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+	        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+	        crossorigin="anonymous">
+		</script>
+		<script src="assets/js/bootstrap.min.js"></script>		
+		<script src="assets/js/bootstrap-tagsinput.js"></script>	
+		<script src="assets/js/typeahead.js"></script>
+		<script src="assets/js/script.js"></script>
+	</body>
+</html>	
+							

@@ -1,0 +1,121 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>S1SE - Cadastro de usuários</title>
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/cadastro-usuarios/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col">
+					    <a href="../">
+    						<div class="logo">
+    							<img src="assets/images/logo.png" class="logo-s1se-01" width="156px" height="61px"/>
+    						</div>
+						</a>
+					</div>
+					<div class="col">
+						<div class="menu usr">
+							<nav>
+								<ul>
+									<li data-toggle="modal" data-target="#janela">
+										<a href="#">Já sou cadastrado</a>		
+									</li>
+								</ul>
+							</nav>					
+						</div>	
+					</div>
+				</div>								
+			</div>
+			<div class="modal fade" id="janela">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<img src="assets/images/logo.png"/>
+						</div>
+						<div class="modal-body">
+							<form>
+								<input type="text" placeholder="E-mail"><br>
+								<input type="text" placeholder="Senha"><br>
+								<input type="submit" value="Continuar"><br>
+								<a href="#"><u>Esqueci a senha</u></a><br><br>
+								<a href="#" data-dismiss="modal">Cancelar</a>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<a href="cadastro-usuarios.html">Criar uma conta</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="main_content">
+			<div class="container">				
+				<div class="row justify-content-center">
+					<div class="col-md-6 p-3 rounded">
+						<h5 class="text-center" id="label">Precisamos de alguns dados:</h5>
+						<div class="ellipse"></div><div class="progress-bar rounded" role="progressbar" style="width:1%;" id="progressBar">
+							<b class="lead" id="progressText"></b>
+						</div><div class="ellipse"></div><br>						
+						<form action="" method="post" id="form-data">
+							<div id="first">								
+								<div class="form-group">									
+									<input type="text" name="name" class="form-control" placeholder="Nome Completo">
+								</div>								
+								<div class="form-group">									
+									<input type="text" name="email" class="form-control" placeholder="E-mail">
+								</div>
+								<div class="btn-confirmar">
+									<a href="#" id="next-1">Continuar</a>
+								</div>
+							</div>
+							<div id="second">								
+								<div class="form-group">
+									<input type="password" name="senha" class="form-control"placeholder="Senha">									
+								</div>
+								<div class="form-group">
+									<input type="password" name="repeat-senha" class="form-control" placeholder="Repita sua senha">
+								</div>
+								<div class="form-group">
+									<input id="accept" type="checkbox" name="check" value="check1" onclick="habilitar();">
+									<label for="accept">Li e aceito os Termos e Condições de uso da S1SE</label>
+								</div>
+								<div class="form-group">								
+									<div class="btn-confirmar" id="btn-confirmar">
+										<span id="linkspan"><a href="#" id="next-2">Confirmar</a></span>
+									</div>
+									<a href="#" id="prev-2">Voltar</a>
+								</div>
+							</div>
+							<div id="third">
+								<h4>Enviamos um link de confirmação <br>para o seu e-mail</h4>
+								<div class="btn-confirmar">
+									<a href="#" id="next-3">Continuar</a>
+								</div>
+								<a href="#" class="reenviar">Reenviar Link</a>
+							</div>
+							<div id="fourth">
+								<input id="radio1" type="radio" name="perfil" value="empreendedor">
+								<label for="radio1">Empreendedor</label><br>
+								<input id="radio2" type="radio" name="perfil" value="fornecedor">
+								<label for="radio2">Fornecedor</label><br>
+								<input id="radio3" type="radio" name="perfil" value="Investidor">
+								<label for="radio3">Investidor</label><br>
+								<input id="radio4" type="radio" name="perfil" value="profissional">
+								<label for="radio4">Profissional</label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>			
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/script.js"></script>
+	</body>
+</html>

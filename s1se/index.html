@@ -1,0 +1,426 @@
+<html>
+	<head>
+		<title>S1SE - Startup, Investors, Suppliers, Employees</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />			
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="logo">
+							<a href="#">
+								<img src="assets/images/logo.png" class="logo-s1se-01" />
+							</a>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="menu">
+							<nav class="navbar navbar-expand-lg navbar-light">
+								<img src="assets/images/notif.svg" class="icone-notif" width="34.7" height="35.8" data-toggle="dropdown"/>
+								<!--if notificacoes <=0 -> display:none -->
+								<div class="num-notif">10</div>
+								<div class="dropdown-menu notif">
+									você tem 10 notificações
+								</div>
+								<div class="dropdown">
+									<button class="navbar-toggler bg-light" data-toggle="collapse" data-target="#navbarMenu">
+									<span class="navbar-toggler-icon"></span>
+									</button>
+								</div>
+								<div class="menu navbar-collapse collapse" id="navbarMenu">	
+								<ul>
+									<li>
+										<a href="#">Quem Somos</a>
+									</li>
+									<li>
+										<a href="#">Planos</a>
+									</li>
+									<li>
+										<a href="#">Contato</a>
+									</li>		
+									<!-- if usuario=logado->display:none -->							
+									<div class="deslogado">
+										<li class="btn_cadastro">
+											<a class="Cadastre-se" href="cadastro-usuarios.html">Cadastre-se</a>
+										</li>
+										<li class="btn_entrar" data-toggle="modal" data-target="#janela">
+											<a class="Entrar" href="#">Entrar</a>	
+										</li>
+									</div>
+									<!-- if usuario=logado->display:block -->
+									<li class="logado">									
+									<div class="nav-perfil dropdown-toggle" data-toggle="dropdown">										
+										<div class="img-perfil"></div>Nome do Usuário	
+										<div class="dropdown-menu">
+											<ul>
+												<li><a href="../">Home</a></li>
+												<li><a href="../perfil.html">Meu Perfil</a></li>
+												<li><a href="../chat.html">Chat</a></li>
+												<li><a href="../alterar-senha.html">Alterar Senha</a></li>
+												<li><a href="#">Sair</a></li>
+											</ul>
+										</div>										
+									</div>	
+									</li>								
+								</ul>							
+							</div>
+						</nav>
+						</div>
+					</div>
+					<div class="col-sm-4 dropdown">						
+						<!--if usuario=logado->display:none-->
+						<div class="deslogado"> 
+							<div class="btn_cadastro">
+							<a class="Cadastre-se" href="cadastro-usuarios.html">Cadastre-se</a>
+							</div>
+							<div class="btn_entrar" data-toggle="modal" data-target="#janela">
+								<a class="Entrar" href="#">Entrar</a>
+							</div>	
+						</div>
+						<!--if usuario=logado->display:flex-->
+						<div class="logado">
+							<img src="assets/images/notif.svg" class="icone-notif" width="34.7" height="35.8" data-toggle="dropdown"/>
+							<!--if notificacoes <=0 -> display:none -->
+							<div class="num-notif">10</div>
+							<div class="dropdown-menu notif">
+								você tem 10 notificações
+							</div>
+							<div class="nav-perfil">
+								<div class="user-options dropdown-toggle" data-toggle="dropdown">
+									<div class="img-perfil"></div>Nome do Usuário	
+									<div class="dropdown-menu">
+										<ul>
+											<li><a href="../">Home</a></li>
+											<li><a href="../perfil.html">Meu Perfil</a></li>
+											<li><a href="../chat.html">Chat</a></li>
+											<li><a href="../alterar-senha.html">Alterar Senha</a></li>
+											<li><a href="#">Sair</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="janela">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<img src="assets/images/logo.png"/>
+						</div>
+						<div class="modal-body">
+							<form>
+								<input type="text" placeholder="E-mail"><br>
+								<input type="text" placeholder="Senha"><br>
+								<input type="submit" value="Continuar"><br>
+								<a href="#"><u>Esqueci a senha</u></a><br><br>
+								<a href="#" data-dismiss="modal">Cancelar</a>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<a href="cadastro-usuarios.html">Criar uma conta</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="hero">
+			<div class="container">
+				<!--Aba com filtragem - fazer com bootstrap -->
+				<div class="busca">
+					<div class="abas">
+						<div id="setStartup"><a href="javascript:void(0);" class="active">Startup</a></div>
+						<div id="setProfissionais"><a href="javascript:void(0);">Profissionais</a></div>
+						<div id="setFornecedores"><a href="javascript:void(0);">Fornecedores</a></div>
+					</div><br>	
+					<form method="GET">
+						<input type="text" id="input_txt" placeholder="Digite o nome da Startup" ><input type="submit" class="pesquisar mobile" value=" " onclick="pesquisar();"><input type="submit" class="pesquisar" value="Pesquisar" onclick="pesquisar();"><br>
+						<div class="busca_avancada collapse" id="busca_avancada">							
+							<div class="filtros">	
+								<div class="dropdown">
+									<a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Segmento</a>
+									<div class="dropdown-menu">										
+										<label for="agricultura"><input type="checkbox" name="segmento" value="Agricultura" id="agricultura" />Agricultura</label><br>
+										<label for="economia"><input type="checkbox" name="segmento" value="Economia" id="economia">Economia</label><br>
+										<label for="tecnologia"><input type="checkbox" name="segmento" value="Tecnologia" id="tecnologia">Tecnologia</label><br>
+										<label for="moda"><input type="checkbox" name="segmento" value="Moda" id="moda">Moda</label><br>
+										<label for="infantil"><input type="checkbox" name="segmento" value="Infantil" id="infantil">Infantil</label><br>
+									</div>
+								</div>
+								<div class="dropdown">
+									<a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false">Avaliação</a>
+									<div class="dropdown-menu">												
+										<label for="1"> 
+											<input type="checkbox" name="avaliacao" value="1" id="1">1
+											<div>
+											<img src="assets/images/rating1.png" />
+											<img src="assets/images/rating0.png" />
+											<img src="assets/images/rating0.png" />
+											<img src="assets/images/rating0.png" />
+											<img src="assets/images/rating0.png" />
+											</div>
+										</label>
+										<br>
+										<label for="2">
+											<input type="checkbox" name="avaliacao" value="2" id="2">2 
+											<div>
+											<img src="assets/images/rating1.png" />
+											<img src="assets/images/rating1.png" />
+											<img src="assets/images/rating0.png" />
+											<img src="assets/images/rating0.png" />
+											<img src="assets/images/rating0.png" />
+											</div>
+										</label>
+										<br>
+										<label for="3">
+											<input type="checkbox" name="avaliacao" value="3" id="3">3 
+											<div>
+											<img src="assets/images/rating1.png" />
+											<img src="assets/images/rating1.png" />
+											<img src="assets/images/rating1.png" />
+											<img src="assets/images/rating0.png" />
+											<img src="assets/images/rating0.png" />
+											</div>
+										</label>
+										<br>
+										<label for="4">
+											<input type="checkbox" name="avaliacao" value="4" id="4">4 
+											<div>
+											<img src="assets/images/rating1.png" />
+											<img src="assets/images/rating1.png" />
+											<img src="assets/images/rating1.png" />
+											<img src="assets/images/rating1.png" />
+											<img src="assets/images/rating0.png" />
+											</div>
+										</label>
+										<br>
+										<label for="5">
+											<input type="checkbox" name="avaliacao" value="5" id="5">5 
+											<div>
+											<img src="assets/images/rating1.png" />
+											<img src="assets/images/rating1.png" />
+											<img src="assets/images/rating1.png" />
+											<img src="assets/images/rating1.png" />
+											<img src="assets/images/rating1.png" />
+											</div>
+										</label>										
+									</div>									
+								</div>
+								<div class="dropdown">
+									<a href="#" class="btn btn-primary dropdown-toggle">País</a>
+								</div>
+								<div class="dropdown">
+									<a href="#" class="btn btn-primary dropdown-toggle">Estado</a>
+								</div>
+								<div class="dropdown">
+									<a href="#" class="btn btn-primary dropdown-toggle">Cidade</a>
+								</div>								
+							</div>												
+						</div>	
+						<a href="#" class="btn_busca_avancada collapsed dropdown-toggle" data-toggle="collapse" data-target="#busca_avancada">Busca avançada</a>					
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="o-que-fazemos">
+			<div class="container">
+				<div class="green-bar"></div><h3>O que fazemos</h3>							
+				<div class="coluna_1">
+					<div class="texto">
+						<h1>Conectamos <strong>pessoas</strong> para impulsionar <strong>ideias inovadoras</strong></h1>
+						<h4>Acreditamos que as ideias podem mudar o mundo, e vamos ajudar a tirar as suas do papel</h4>	
+					</div>			
+					<div class="frame-left">
+						<div></div>
+					</div>		
+					<div class="oqf-img">
+						<img src="assets/images/home1.png" class="home1" />
+					</div>
+				</div>
+				<div class="coluna_2">
+					<div class="frame_video">
+						 <video width="560" height="400" controls>
+								<source src="movie.mp4" type="video/mp4">
+								<source src="movie.ogg" type="video/ogg">
+							Your browser does not support the video tag.
+						</video> 						
+					</div>
+					<div class="frame-right">
+						<div></div>
+					</div>					
+				</div>									
+			</div>
+		</div> <br />
+
+		<div class="planos">
+			<div class="container">
+				<div class="green-bar"></div><h3>Planos</h3>
+				<div class="texto">
+					<h1>Planos <strong>personalizados</strong><br>para cada perfil</h1>
+					<h4>Conheça as vantagens e benefícios que cada perfil oferece</h4>
+				</div>
+				<div class="row">
+					<div class="col-sm-3">
+						<div class="img profissional">
+							<h2>Profissional</h2>
+						</div>
+						<div class="hover">
+							<h2>Profissional</h2>
+							<p>Espaço para listar benefícios e vantagens desse plano</p>
+							<a href="#">Contratar</a>
+						</div>
+					</div>					
+					<div class="col-sm-3">
+						<div class="img empreendedor">
+							<h2>Empreendedor</h2>
+						</div>
+						<div class="hover">
+							<h2>Empreendedor</h2>
+							<p>Espaço para listar benefícios e vantagens desse plano</p>
+							<a href="#">Contratar</a>
+						</div>
+					</div>					
+					<div class="col-sm-3">
+						<div class="img investidor">
+							<h2>Investidor</h2>
+						</div>
+						<div class="hover">
+							<h2>Investidor</h2>
+							<p>Espaço para listar benefícios e vantagens desse plano</p>
+							<a href="#">Contratar</a>
+						</div>
+					</div>					
+					<div class="col-sm-3">
+						<div class="img fornecedor">
+							<h2>Fornecedor</h2>
+						</div>
+						<div class="hover">
+							<h2>Fornecedor</h2>
+							<p>Espaço para listar benefícios e vantagens desse plano</p>
+							<a href="#">Contratar</a>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+
+		<div class="nosso_time">			
+				<div class="top">					
+					<div class="txt">
+						<h2>Nosso time</h2>
+						<p>A S1SE nasceu dentro de um curso de MBA de Business Innovation, através de diversas interações entre alunos e professores com a mesma constante, ótimas ideias que poderiam se tornar oportunidades de negócio.</p>	
+					</div>
+				</div>
+				<div class="container">
+				<div class="bottom">
+					<div class="row">
+						<div class="col-sm-6 left" id="bruno">
+							<h2>Bruno Ferrer</h2>
+							<h4>Profissão ou cargo</h4>							
+							<div class="details">				
+								<h3>Bruno Ferrer</h3>
+								<p>
+								Carioca, formado em Administração de Empresas pela PUC-RJ, 
+								com especialização em Marketing pela FGV-RJ, Gestão na Universidade da Califórnia e Gerenciamento de Projetos em Stanford.  Com 8 anos de experiência na Ambev, atuando nas áreas de Vendas, Trade Marketing e Marketing, desenvolveu a plataforma digital de Trade Marketing que é o balizador do time de execução.
+								</p>
+								<img src="assets/images/linkedin.png" width="46" height="46" />
+							</div>
+						</div>
+						<div class="col-sm-6 right" id="nitai">
+							<h2>Nitai Abujamra</h2>
+							<h4>Profissão ou cargo</h4>			
+							<div class="details">								
+								<h3>Nitai Abujamra</h3>
+								<p>
+								Carioca, formado em Administração de Empresas pela PUC-RJ, 
+								com especialização em Marketing pela FGV-RJ, Gestão na Universidade da Califórnia e Gerenciamento de Projetos em Stanford.  Com 8 anos de experiência na Ambev, atuando nas áreas de Vendas, Trade Marketing e Marketing, desenvolveu a plataforma digital de Trade Marketing que é o balizador do time de execução.
+								</p>
+								<img src="assets/images/linkedin.png" width="46" height="46" />
+							</div>
+						</div>
+						<div class="col-sm-6 left" id="victor">
+							<h2>Victor Tadeu</h2>
+							<h4>Profissão ou cargo</h4>			
+							<div class="details">			
+								<h3>Victor Tadeu</h3>
+								<p>
+								Carioca, formado em Administração de Empresas pela PUC-RJ, 
+								com especialização em Marketing pela FGV-RJ, Gestão na Universidade da Califórnia e Gerenciamento de Projetos em Stanford.  Com 8 anos de experiência na Ambev, atuando nas áreas de Vendas, Trade Marketing e Marketing, desenvolveu a plataforma digital de Trade Marketing que é o balizador do time de execução.
+								</p>
+								<img src="assets/images/linkedin.png" width="46" height="46" />
+							</div>
+						</div>
+						<div class="col-sm-6 right" id="gustavo">
+							<h2>Gustavo Seidler</h2>
+							<h4>Profissão ou cargo</h4>			
+							<div class="details">								
+								<h3>Gustavo Seidler</h3>
+								<p>
+								Carioca, formado em Administração de Empresas pela PUC-RJ, 
+								com especialização em Marketing pela FGV-RJ, Gestão na Universidade da Califórnia e Gerenciamento de Projetos em Stanford.  Com 8 anos de experiência na Ambev, atuando nas áreas de Vendas, Trade Marketing e Marketing, desenvolveu a plataforma digital de Trade Marketing que é o balizador do time de execução.
+								</p>
+								<img src="assets/images/linkedin.png" width="46" height="46" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="container">
+				<div class="top">
+					<div class="row">
+						<div class="col-sm-7">
+							<h2>Impulsionando ideias através da conexão</h2>
+							<img src="assets/images/instagram.png" class="img-ig"/>
+							<img src="assets/images/youtube.png" class="img-yt"/>
+						</div>
+						<div class="col-sm-5">
+							<div class="row">
+								<div class="col-sm-6">
+									<h4>Sobre nós</h4>
+									<ul>
+										<li><a href="#">Nosso time</a></li>
+										<li><a href="#">Prêmios</a></li>
+									</ul>
+								</div>
+								<div class="col-sm-6">
+									<h4>Carreiras</h4>
+									<ul>	
+										<li><a href="#">Vagas</a></li>
+										<li><a href="#">Ajuda</a></li>
+									</ul>
+								</div>
+							</div>
+							<div>
+								<h4><a href="#">Entre em contato conosco</a></h4>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottom">
+					<div class="row">
+						<div class="col-sm-7">
+							<a href="#">Termos e condições</a>
+							<a href="#">Política de privacidade</a>
+						</div>
+						<div class="col-sm-5">
+							&copy; 2019 S1SE. Todos os direitos reservados
+						</div>
+					</div>
+				</div>
+			</div>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+			<script src="assets/js/bootstrap.min.js"></script>
+			<script src="assets/js/script.js"></script>
+		</footer>
+	</body>
+</html>
